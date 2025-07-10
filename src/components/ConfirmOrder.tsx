@@ -40,9 +40,13 @@ const ConfirmOrder: React.FC<ConfirmOrderProps> = ({ items, onConfirm }) => {
               {/* Info Block */}
               <div className="flex justify-between items-center w-full">
                 <div>
-                  <p className="text-rose-900 font-medium">{item.name}</p>
-                  <p className="text-sm text-red">{item.quantity}x</p>
-                </div>
+                    <p className="text-rose-900 font-medium">{item.name}</p>
+
+                    <div className="flex items-center gap-2 text-sm">
+                        <span className="text-red font-medium">{item.quantity}x</span>
+                        <span className="text-rose-400">${item.price.toFixed(2)}</span>
+                    </div>
+                    </div>
 
                 <span className="text-rose-900 font-semibold whitespace-nowrap">
                   ${(item.quantity * item.price).toFixed(2)}
