@@ -13,11 +13,11 @@ const ConfirmOrder: React.FC<ConfirmOrderProps> = ({ items, onConfirm }) => {
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
   return (
-    <div className="bg-white rounded-xl shadow-md w-full max-w-lg mx-auto py-6 px-5 max-h-[90vh] overflow-y-auto 
-    fixed top-[100px] inset-x-0 h-[calc(100vh-100px)] z-50 
-    lg:static lg:h-auto lg:rounded-xl">
+    <div className="bg-white rounded-xl shadow-md w-full max-w-lg mx-auto py-6 px-5
+  fixed top-[100px] inset-x-0 h-[calc(100vh-100px)] z-50 overflow-y-auto
+  lg:static lg:h-auto lg:rounded-xl">
       
-      <div className="px-8">
+      <div className="px-8 sm:px-6">
         <div className='-ml-2 pt-6'>
         <img src={tick} alt="Tick" className="w-10 h-10 mb-2 " />
 

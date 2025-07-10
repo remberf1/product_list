@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import ProductGrid from './components/ProductGrid'
 import Cart from './components/Cart'
 import ConfirmOrder from './components/ConfirmOrder'
 import type { Product } from './types/products'
 import data from './data/data.json'
+import type { CartItem } from './components/Cart'
 
 function App() {
-  const [cartItems, setCartItems] = useState<{ name: string; quantity: number; price: number }[]>([])
+ const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [showConfirm, setShowConfirm] = useState(false)
 
   const removeFromCart = (productName: string) => {
@@ -61,7 +62,7 @@ function App() {
         <>
           {/* Modal overlay */}
           <div
-            className="fixed   inset-0 bg-black/35  z-40"
+            className="fixed   inset-x-0 bg-black/35  z-40"
             onClick={() => setShowConfirm(false)}
             aria-hidden="true"
           />
