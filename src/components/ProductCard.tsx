@@ -5,9 +5,10 @@ import CartButton from './CartButton'
 interface Props {
   product: Product
   updateCart: (product: Product, quantity: number) => void
+    quantity: number
 }
 
-const ProductCard: React.FC<Props> = ({ product, updateCart }) => {
+const ProductCard: React.FC<Props> = ({ product, updateCart,quantity }) => {
   const { name, category, price, image } = product
   const focusRingClasses = 'focus:outline-none focus:ring-2 focus:ring-red'
 
@@ -27,7 +28,7 @@ const ProductCard: React.FC<Props> = ({ product, updateCart }) => {
       </picture>
 
       <div className={`absolute bottom-18 left-1/2 transform -translate-x-1/2 z-10 ${focusRingClasses}`} tabIndex={-1}>
-        <CartButton product={product} updateCart={updateCart} />
+        <CartButton product={product} updateCart={updateCart} quantity={quantity}   />
       </div>
 
       <div className="product-info mt-4 px-2">

@@ -47,7 +47,7 @@ function App() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
         <div className="md:col-span-2">
-          <ProductGrid products={products} updateCart={updateCart} />
+          <ProductGrid products={products} updateCart={updateCart} cartItems={cartItems} />
         </div>
         <div className="md:col-span-1 lg:-mt-20 md:pl-5">
           <Cart
@@ -72,6 +72,7 @@ function App() {
               items={cartItems}
               onBack={() => setShowConfirm(false)}
               onConfirm={() => {
+                setCartItems([])    
                 setShowConfirm(false)
               }}
             />
